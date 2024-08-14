@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado dos Estudantes</title>
+</head>
+
+<body>
+    <h1>Resultado dos Estudantes</h1>
+
+    <script>
+        // Lista de estudantes
+        const estudantes = [
+            { nome: "Ana", nota1: 8, nota2: 7.5 },
+            { nome: "Bruno", nota1: 6, nota2: 5 },
+            { nome: "Carlos", nota1: 9, nota2: 8 },
+            { nome: "Daniela", nota1: 7, nota2: 7 }
+        ];
+
+        // Função para calcular a média
+        function calcularMedia(nota1, nota2) {
+            return (nota1 + nota2) / 2;
+        }
+
+        // Verificação de sucesso no concurso
+        function verificarResultado(estudantes) {
+            const mediaAprovacao = 7;
+
+            estudantes.forEach(estudante => {
+                const media = calcularMedia(estudante.nota1, estudante.nota2);
+                const mensagem = media >= mediaAprovacao
+                    ? `${estudante.nome} foi aprovado(a) com média ${media}.`
+                    : `${estudante.nome} não foi aprovado(a). Sua média foi ${media}.`;
+
+                alert(mensagem); // Exibe a mensagem para cada estudante
+            });
+        }
+
+        // Exibir resultados no alert, um aluno de cada vez
+        verificarResultado(estudantes);
+    </script>
+</body>
+
+</html>
